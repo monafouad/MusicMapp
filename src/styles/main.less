@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Grouch';
+  src: url('/images/fonts/Grouch.eot');
+  src: url('/images/fonts/Grouch.eot?#iefix') format('embedded-opentype'),
+  url('/images/fonts/Grouch.woff') format('woff'),
+  url('/images/fonts/Grouch.ttf') format('truetype'),
+  url('/images/fonts/Grouch.svg#Grouch') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Roboto';
+  background: @background;
+  color: @mainColor;
+  font-size: 21px;
+
+  a {
+    color: @mainColor;
+    transition: all 0.8s ease;
+  }
+
+  a:hover,
+  a:focus {
+    color: @mainColor;
+  }
+}
+
+main {
+  height: ~"calc(100% - @{playerHeight})";
+  width: 100%;
+  position: absolute;
+}
+
+.clear {
+  clear: both;
+}
+
+header {
+  width: 100%;
+  display: block;
+  padding: 0 15px;
+  line-height: @headerHeight;
+  height: @headerHeight;
+
+  h1 {
+    font-weight: normal;
+    float: left;
+    font-size: 21px;
+    line-height: @headerHeight;
+    margin: 0;
+    padding: 0;
+
+    .fa {
+      margin-right: 10px;
+    }
+
+    a {
+      color: @mainColor;
+      
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  h2 {
+    font-weight: normal;
+    float: right;
+    line-height: @headerHeight;
+    font-size: 21px;
+    margin: 0 0 0 10px;
+    padding: 0;
+  }
+}
+
+.half {
+  width: 50%;
+  float: left;
+  display: inline-block;
+}
+
+.big-background {
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 100%;
+}

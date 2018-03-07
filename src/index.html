@@ -1,0 +1,40 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html" ng-app="app">
+<head>
+    <title ng-bind="$root.meta.title"></title>
+    <meta content="{{ $root.meta.title }}" name="title" />
+    <meta ng-if="$root.meta.description" content="{{ $root.meta.description }}" name="description" property="og:description" />
+    <meta content="index, follow" name="robots" />
+    <meta content="{{ $root.meta.title }}" property="og:title" />
+    <meta content="website" property="og:type" />
+    <meta ng-if="$root.meta.image" content="{{ $root.meta.image}}" property="og:image" />
+    <meta content="MusicMap" property="og:site_name" />
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- build:css(.tmp) index.css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <!-- endbuild -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/scripts/map/ammap.js"></script>
+    <script type="text/javascript" src="/scripts/map/continentsLow.js"></script>
+</head>
+
+<body ng-cloak="" ng-controller="body">
+    <div ui-view="content"></div>
+    <div ui-view="player" id="player"></div>
+</body>
+
+<!-- build:js(.tmp) index.js -->
+<script src="jspm_packages/system.js"></script>
+<script src="jspm.browser.js"></script>
+<script src="jspm.config.js"></script>
+
+<script>
+  System.import('src/scripts/app.module.js');
+</script>
+<!-- endbuild -->
+</html>

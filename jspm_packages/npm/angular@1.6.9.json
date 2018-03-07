@@ -1,0 +1,10 @@
+{
+  "main": "angular",
+  "format": "global",
+  "meta": {
+    "angular.js": {
+      "exports": "angular",
+      "format": "global"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "main": "index.js",
+  "format": "cjs",
+  "meta": {
+    "*.json": {
+      "format": "json"
+    },
+    "angular-resource.js": {
+      "deps": [
+        "angular"
+      ],
+      "format": "global"
+    }
+  }
+}

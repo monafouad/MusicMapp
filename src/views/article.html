@@ -1,0 +1,35 @@
+<main ng-controller="ArticleController as articleController" ng-init="articleController.init()">
+    <section id="article">
+        <div class="half big-background" ng-style="{'background-image': 'url(' + article.images.background + ')'}">
+            <header>
+                <h1><a ui-sref="musicmap.homepage"><i class="fa fa-chevron-left"></i> MusicMap</a></h1>
+                <h2 ng-repeat="country in article.countries"><a href ui-sref="musicmap.country({ alpha2: country.alpha2 })">{{ country.name }}</a></h2>
+            </header>
+        </div>
+        <div class="half">
+            <div class="articles-holder">
+                <h2>{{ article.title }}</h2>
+                <div class="article-content">
+                    <div ng-bind-html="article.longDescription | unsafe"></div>
+
+                    <div class="articles-wrapper related-articles" ng-if="related">
+                        <ul>
+                            <li ng-repeat="relatedArticle in related">
+                                <a href ui-sref="musicmap.article({ path: relatedArticle.path, id: relatedArticle.id })" class="image-holder" ng-style="{'background-image': 'url(' + relatedArticle.images.thb + ')'}"></a>
+
+                                <a href ui-sref="musicmap.article({ path: relatedArticle.path, id: relatedArticle.id })" class="info-holder">
+                                    <strong>{{ relatedArticle.title | maxLength: 20 }}</strong>
+                                    <div>{{ relatedArticle.longDescription | removeHTMLTags | maxLength: 140 }}</div>
+                                </a>
+
+                                <a href ng-click="toggleFavorite(relatedArticle.id);" class="heart">
+                                    <i ng-class="{'fa-heart': isFavorite(relatedArticle.id), 'fa-heart-o': !isFavorite(relatedArticle.id)}" class="fa"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

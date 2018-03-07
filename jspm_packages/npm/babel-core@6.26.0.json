@@ -1,0 +1,19 @@
+{
+  "main": "index.js",
+  "format": "cjs",
+  "meta": {
+    "*": {
+      "globals": {
+        "process": "process"
+      }
+    },
+    "*.json": {
+      "format": "json"
+    }
+  },
+  "map": {
+    "./lib/transformation/file": "./lib/transformation/file/index.js",
+    "./lib/transformation/file/options": "./lib/transformation/file/options/index.js",
+    "./package": "./package.json"
+  }
+}

@@ -1,0 +1,105 @@
+section#homepage {
+  width: 100%;
+    height: ~"calc(100% - @{headerHeight})";
+  float: left;
+  display: block;
+  position: relative;
+
+  #map {
+    width: 100%;
+    text-align: center;
+    height: ~"calc(100% - @{featuredHeight} - 10px)";
+  }
+
+  .featured {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: @featuredHeight;
+    width: 100%;
+    background: @blue;
+
+    .big-heart {
+      float: left;
+      height: @featuredHeight;
+      width: @featuredHeartWidth;
+      line-height: @featuredHeight;
+      background: @red;
+      text-align: center;
+      color: @mainColor;
+
+      &:hover {
+        background: @darkRed;
+      }
+    }
+
+    .articles-wrapper {
+      float: left;
+      width: ~"calc(100% - @{featuredHeartWidth})";
+      background: @blue;
+      overflow-x: auto;
+
+      ul {
+        white-space: nowrap;
+
+        li {
+          list-style-type: none;
+          display: inline-block;
+          width: 20%;
+          height: ~"calc(@{featuredHeight} - 35px)";
+          background: @blue;
+          padding: 15px 10px 10px 10px;
+          position: relative;
+
+          .heart {
+            font-size: 15px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+          }
+
+          .image-holder {
+            float: left;
+            display: inline;
+            width: 70px;
+            height: 70px;
+            padding-top: 5px;
+            border-radius: 50%;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+
+          .info-holder {
+            float: left;
+            display: inline;
+            width: ~"calc(100% - 70px)";
+            padding: 0 15px;
+
+            strong {
+              font-size: 16px;
+              display: block;
+            }
+
+            div {
+              font-size: 10px;
+              line-height: 13px;
+              padding-top: 3px;
+              white-space: normal;
+            }
+          }
+        }
+
+        li:before {
+          content: '';
+          height: @featuredHeight;
+          width: 1px;
+          background: @darkBlue;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}

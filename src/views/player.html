@@ -1,0 +1,37 @@
+<div class="player-bar" ng-controller="PlayerController as playerController" ng-init="playerController.init()">
+    <div class="col-md-3 now-playing">
+        <div class="image-holder">
+            <img ng-src="{{ currentTrack().cover }}">
+        </div>
+        <div class="track-holder">
+            <span>Now playing</span>
+            <strong>{{ currentTrack().nameTrack }}</strong>
+            <span>{{ currentTrack().nameArtist }}</span>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="controls">
+            <div class="buttons">
+                <a href ng-class="{'disabled': !previousTrack()}" ng-click="previous()"><i class="fa fa-step-backward"></i></a>
+                <a href ng-click="playPause();"><i ng-class="{'fa-pause-circle': playing, 'fa-play-circle': !playing}" class="fa fa-play-circle"></i></a>
+                <a href ng-class="{'disabled': !nextTrack()}" ng-click="next()"><i class="fa fa-step-forward"></i></a>
+            </div>
+            <div class="slidecontainer">
+                <span class="current">{{ $root.player.currentTime | trackTime }}</span>
+                <input type="range" min="0" max="100" step="1" class="slider" ng-model="$root.player.percentage">
+                <span class="total">{{ $root.player.duration | trackTime }}</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-3 next-in-queue" ng-if="nextTrack()">
+        <div class="image-holder">
+            <img ng-src="{{ nextTrack().cover }}">
+        </div>
+        <div class="track-holder">
+            <span>Next track</span>
+            <strong>{{ nextTrack().nameTrack }}</strong>
+            <span>{{ nextTrack().nameArtist }}</span>
+        </div>
+    </div>
+</div>

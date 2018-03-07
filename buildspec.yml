@@ -1,0 +1,15 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - apt-get update -y
+      - npm install -g gulp-cli
+      - npm install -g jspm
+      - npm install
+      - jspm install
+  build:
+    commands:
+      - gulp build:$MUSICMAP_BUILD_ENV
+  post_build:
+    commands:
+      - if [ "$(echo "$MUSICMAP_BUILD_ENV")" = "int" ]; then aws s3 sync ./dist s3://int-refereemanagertool --delete; else aws s3 sync ./dist s3://musicmap.com --delete; fi

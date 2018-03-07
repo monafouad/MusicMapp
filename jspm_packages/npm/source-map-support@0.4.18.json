@@ -1,0 +1,19 @@
+{
+  "main": "source-map-support.js",
+  "format": "cjs",
+  "meta": {
+    "*": {
+      "globals": {
+        "process": "process"
+      }
+    },
+    "*.json": {
+      "format": "json"
+    },
+    "source-map-support.js": {
+      "globals": {
+        "Buffer": "buffer/global"
+      }
+    }
+  }
+}

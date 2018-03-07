@@ -1,0 +1,43 @@
+<main ng-controller="HomepageController as homepageController" ng-init="homepageController.init()">
+    <header></header>
+
+    <section id="homepage">
+        <div id="map"></div>
+
+        <div class="featured">
+            <a href ng-click="toggleHomepageArticles()" class="big-heart"><i class="fa" ng-class="{'fa-heart': homepageArticlesMode == 'featured', 'fa-star': homepageArticlesMode == 'favorites'}"></i></a>
+
+            <div class="articles-wrapper">
+                <ul ng-show="homepageArticlesMode == 'featured'">
+                    <li ng-repeat="article in featuredArticles">
+                        <a href ng-click="toggleFavorite(article.id);" class="heart">
+                            <i ng-class="{'fa-heart': isFavorite(article.id), 'fa-heart-o': !isFavorite(article.id)}" class="fa"></i>
+                        </a>
+
+                        <a href ui-sref="musicmap.article({ path: article.path, id: article.id })" class="image-holder" ng-style="{'background-image': 'url(' + article.images.thb + ')'}"></a>
+
+                        <a href ui-sref="musicmap.article({ path: article.path, id: article.id })" class="info-holder">
+                            <strong>{{ article.title | maxLength: 20 }}</strong>
+                            <div>{{ article.longDescription | removeHTMLTags | maxLength: 140 }}</div>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul ng-show="homepageArticlesMode == 'favorites'">
+                    <li ng-repeat="article in favoriteArticles">
+                        <a href ng-click="toggleFavorite(article.id);" class="heart">
+                            <i class="fa fa-heart"></i>
+                        </a>
+
+                        <a href ui-sref="musicmap.article({ path: article.path, id: article.id })" class="image-holder" ng-style="{'background-image': 'url(' + article.images.thb + ')'}"></a>
+
+                        <a href ui-sref="musicmap.article({ path: article.path, id: article.id })" class="info-holder">
+                            <strong>{{ article.title | maxLength: 20 }}</strong>
+                            <div>{{ article.longDescription | removeHTMLTags | maxLength: 140 }}</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>

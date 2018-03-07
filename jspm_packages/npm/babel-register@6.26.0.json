@@ -1,0 +1,19 @@
+{
+  "main": "lib/node.js",
+  "format": "cjs",
+  "meta": {
+    "*": {
+      "globals": {
+        "process": "process"
+      }
+    },
+    "*.json": {
+      "format": "json"
+    }
+  },
+  "map": {
+    "./lib/node.js": {
+      "browser": "./lib/browser.js"
+    }
+  }
+}

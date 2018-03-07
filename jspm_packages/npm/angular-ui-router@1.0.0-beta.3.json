@@ -1,0 +1,93 @@
+{
+  "main": "release/angular-ui-router.js",
+  "format": "cjs",
+  "meta": {
+    "*.json": {
+      "format": "json"
+    },
+    "commonjs/common/module.d.ts": {
+      "format": "esm"
+    },
+    "commonjs/core.d.ts": {
+      "format": "esm"
+    },
+    "commonjs/params/module.d.ts": {
+      "format": "esm"
+    },
+    "commonjs/path/module.d.ts": {
+      "format": "esm"
+    },
+    "commonjs/resolve/module.d.ts": {
+      "format": "esm"
+    },
+    "commonjs/state/module.d.ts": {
+      "format": "esm"
+    },
+    "commonjs/transition/module.d.ts": {
+      "format": "esm"
+    },
+    "commonjs/url/module.d.ts": {
+      "format": "esm"
+    },
+    "commonjs/view/module.d.ts": {
+      "format": "esm"
+    },
+    "release/common/module.d.ts": {
+      "format": "esm"
+    },
+    "release/core.d.ts": {
+      "format": "esm"
+    },
+    "release/params/module.d.ts": {
+      "format": "esm"
+    },
+    "release/path/module.d.ts": {
+      "format": "esm"
+    },
+    "release/resolve/module.d.ts": {
+      "format": "esm"
+    },
+    "release/state/module.d.ts": {
+      "format": "esm"
+    },
+    "release/transition/module.d.ts": {
+      "format": "esm"
+    },
+    "release/url/module.d.ts": {
+      "format": "esm"
+    },
+    "release/view/module.d.ts": {
+      "format": "esm"
+    },
+    "src/common/module.ts": {
+      "format": "esm"
+    },
+    "src/core.ts": {
+      "format": "esm"
+    },
+    "src/ng1.ts": {
+      "format": "esm"
+    },
+    "src/params/module.ts": {
+      "format": "esm"
+    },
+    "src/path/module.ts": {
+      "format": "esm"
+    },
+    "src/resolve/module.ts": {
+      "format": "esm"
+    },
+    "src/state/module.ts": {
+      "format": "esm"
+    },
+    "src/transition/module.ts": {
+      "format": "esm"
+    },
+    "src/url/module.ts": {
+      "format": "esm"
+    },
+    "src/view/module.ts": {
+      "format": "esm"
+    }
+  }
+}
